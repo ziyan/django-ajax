@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.test import TestCase, Clienta
+from django.test import TestCase, Client
 from django.contrib.auth.models import User
 from test_utils import AjaxTestMixin
 

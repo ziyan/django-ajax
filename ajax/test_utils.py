@@ -6,14 +6,14 @@ class AjaxTestMixin(object):
 
     def ajax_get(self, function, argv=None, client=None, follow=True):
         client = client or self.client
-        url = reverse('call', args=[function])
+        url = reverse('ajax:call', args=[function])
         if argv is not None:
             url = '%s?%s' % (url, urllib.urlencode({ 'argv': simplejson.dumps(argv) }))
         return client.get(url, follow=follow)
 
     def ajax_post(self, function, argv=None, client=None, follow=True):
         client = client or self.client
-        url = reverse('call', args=[function])
+        url = reverse('ajax:call', args=[function])
         data = {}
         if argv is not None:
             data = { 'argv': simplejson.dumps(argv) }
