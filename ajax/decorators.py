@@ -19,6 +19,7 @@ def ajax_response(function):
 
 def ajax_post(function):
     register_function(function.__module__, function.__name__, True)
+    print function.__module__, function.__name__
     return ajax_response(function)
 
 def ajax_get(function):

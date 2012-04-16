@@ -25,6 +25,15 @@ Define your ajax functions with the @ajax_get or @ajax_post decorator::
 
 Your ajax function has to always return a dict which will be jsonified.
 
+In your settings.py make sure your own apps are listed in PROJECT_APPS::
+
+    PROJECT_APPS = (
+        'app1',
+        'app2',
+    )
+
+    INSTALLED_APPS += PROJECT_APPS
+
 In your main urls.py, add::
 
     import ajax
